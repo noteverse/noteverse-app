@@ -1,2 +1,2 @@
-# noteverse-app
-noteVerse is an open-source HTML simple note taking app.
+# noteVerse
+noteVerse is an Open source HTML note-taking app

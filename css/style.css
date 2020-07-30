@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+html {
+  overflow-y: scroll;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+body {
+  font-family: 'Ubuntu',
+    sans-serif;
+  margin: 0;
+  color: #333;
+  font-weight: 100;
+}
+
+a {
+  font-size: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  background-color: cornflowerblue;
+  padding: .5% .3% .3%;
+  color: white;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+}
+
+main {
+  width: 65%;
+  margin: auto;
+  padding-top: 2%;
+}
+
+a,
+button {
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: color .3s ease;
+}
+
+button:hover {
+  color: #ebebeb;
+  transition: color .3s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn {
+  margin-right: 5px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.editor__container:focus {
+  outline: none;
+  font-size: 28px;
+}
+
+#heading {
+  border-bottom: 2px solid lightgray;
+  font-size: 34px;
+  font-weight: 700;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+
+#content {
+  border: none;
+  font-size: 18px;
+  margin: 16px 0 30px;
+  width: 100%;
+  min-height: 75%;
+  text-align: justify;
+}
+
+#font-reset {
+  padding: 0 15px;
+}
+
+#font-reset,
+#font-increase,
+#font-decrease {
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+#font-reset:hover,
+#font-increase:hover,
+#font-decrease:hover {
+  color: #ebebeb;
+  transition: color .3s ease;
+}
+
+#font-setting {
+  text-align: center;
+}
+
+#file-setting {
+  text-align: right;
+}

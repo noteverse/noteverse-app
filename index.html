@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/FileSaver.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/mousetrap.min.js"></script>
     <title>noteVerse Document</title>
   </head>
 
   <body>
 
     <nav>
-      <span id="text-setting" class="btn">
+      <span id="text-setting" class="btn_grp">
         <button id="btn-bold"><b>B</b></button>
         <button id="btn-italic"><i>I</i></button>
         <button id="btn-underline"><u>U</u></button>
@@ -22,15 +22,15 @@
         <button id='btn-title'><b>h1</b></button>
         <button id='btn-subtitle'><b>h2</b></button>
       </span>
-      <span id="font-setting" class="">
+      <span id="font-setting">
         <a id="font-decrease">-</a>
         <a id="font-reset"><small>A</small><big>A</big></a>
         <a id="font-increase">+</a>
       </span>
-      <span id="file-setting" class="btn">
+      <span id="file-setting" class="btn_grp">
         <button id="btn-save" onclick="saveDoc()">Save</button>
         <button id="btn-open" onclick="openDoc()">Open</button>
-        <button id="btn-open" onclick="newDoc()">New</button>
+        <button id="btn-new" onclick="newDoc()">New</button>
       </span>
     </nav>
 

@@ -1,7 +1,7 @@
 document.getElementById("heading").innerHTML =
-  localStorage["title"] || "Document Title";
+  localStorage["noteVerse-document__title"] || "Document Title";
 document.getElementById("content").innerHTML =
-  localStorage["text"] || "Content goes here";
+  localStorage["noteVerse-document__text"] || "Content goes here";
 
 setInterval(function () {
   localStorage["title"] = document.getElementById("heading").innerHTML; // heading div
@@ -9,21 +9,21 @@ setInterval(function () {
 }, 1000);
 
 // Page title corresponding to document title
-document.title = document.getElementById('heading').innerText + ' - Paperless Document';
+document.title = document.getElementById('heading').innerText + ' - noteVerse Document';
 document.getElementById('heading').addEventListener('input', function () {
-  document.title = document.getElementById('heading').innerText + ' - Paperless Document';
+  document.title = document.getElementById('heading').innerText + ' - noteVerse Document';
 }, false);
 
-// Save formatted HTML Document
+// Save formatted HTML Document (using Blob)
 function saveDoc() {
   let heading = document.getElementById('heading').innerText;
   let content = document.getElementById('content').innerHTML;
-  let contentStyled = '<body><style>@import url(https: //fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);body{font-family:"Ubuntu",Arial;color: #333;font-size:18px;width:65%;margin:auto;margin-bottom:30px;padding-top:10px;text-align:justify;}header{border-bottom: 2px solid lightgray;font-size: 34px;font-weight: 700;padding-bottom: 5px;}main{padding-top:1%;}</style><header id="noteVerse-heading">' + heading + '</header><main id="noteVerse-content">' + content + '</main></body>';
-  let link = document.createElement('a');
-  let filename = heading.replace(/ /g, "_") + ".html";
-  link.setAttribute('download', filename);
-  link.setAttribute('href', 'data:html;charset=utf-8,' + encodeURIComponent(contentStyled));
-  link.click();
+  let documentStyled = '<body><style>@import url(https: //fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);body{font-family:"Ubuntu",Arial;color:#333;font-size:18px;width:65%;margin:auto;margin-bottom:30px;padding-top:10px;text-align:justify;}header{border-bottom: 2px solid lightgray;font-size:34px;font-weight:700;padding-bottom: 5px;}main{padding-top:1%;}</style><header id="noteVerse-heading">' + heading + '</header><main id="noteVerse-content">' + content + '</main></body>';
+  var blob = new Blob([documentStyled], {
+    type: "html;charset=utf-8"
+  });
+  let filename = heading.replace(/ /g, "_") + ".html"
+  saveAs(blob, filename);
 }
 
 // Open HTML Document
